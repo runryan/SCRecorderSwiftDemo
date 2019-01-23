@@ -1,0 +1,782 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10C4163B64CC3E2E2A4DE78C /* Pods_TouchToRecordUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5A8A6837ECA42A6B5F295C /* Pods_TouchToRecordUITests.framework */; };
+		38CAAB80A34790F167CF2625 /* Pods_TouchToRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA8EFCF2C978853D99F1134 /* Pods_TouchToRecord.framework */; };
+		9421577021F8AC5E00EFADF3 /* TouchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9421576F21F8AC5E00EFADF3 /* TouchableView.swift */; };
+		9421577621F8B56C00EFADF3 /* SCRecordSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9421577521F8B56C00EFADF3 /* SCRecordSessionManager.m */; };
+		943E04A021F890C90043997F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E049F21F890C90043997F /* AppDelegate.swift */; };
+		943E04A221F890C90043997F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E04A121F890C90043997F /* ViewController.swift */; };
+		943E04A521F890C90043997F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943E04A321F890C90043997F /* Main.storyboard */; };
+		943E04A721F890CB0043997F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943E04A621F890CB0043997F /* Assets.xcassets */; };
+		943E04AA21F890CB0043997F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943E04A821F890CB0043997F /* LaunchScreen.storyboard */; };
+		943E04B521F890CB0043997F /* TouchToRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E04B421F890CB0043997F /* TouchToRecordTests.swift */; };
+		943E04C021F890CB0043997F /* TouchToRecordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E04BF21F890CB0043997F /* TouchToRecordUITests.swift */; };
+		943E04CF21F892410043997F /* ViewCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E04CD21F892410043997F /* ViewCaptureViewController.swift */; };
+		943E04D021F892410043997F /* ViewCaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 943E04CE21F892410043997F /* ViewCaptureViewController.xib */; };
+		A913538BDA0252F642F62BDE /* Pods_TouchToRecordTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9084159B177BBD3F43BAAF /* Pods_TouchToRecordTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		943E04B121F890CB0043997F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 943E049421F890C90043997F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 943E049B21F890C90043997F;
+			remoteInfo = TouchToRecord;
+		};
+		943E04BC21F890CB0043997F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 943E049421F890C90043997F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 943E049B21F890C90043997F;
+			remoteInfo = TouchToRecord;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E9084159B177BBD3F43BAAF /* Pods_TouchToRecordTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TouchToRecordTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F3F2762C4A8DDA262D7BDE2 /* Pods-TouchToRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchToRecord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouchToRecord/Pods-TouchToRecord.debug.xcconfig"; sourceTree = "<group>"; };
+		6AA8EFCF2C978853D99F1134 /* Pods_TouchToRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TouchToRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C51D4F4A0A9DFCE6E409D55 /* Pods-TouchToRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchToRecord.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouchToRecord/Pods-TouchToRecord.release.xcconfig"; sourceTree = "<group>"; };
+		9421576F21F8AC5E00EFADF3 /* TouchableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableView.swift; sourceTree = "<group>"; };
+		9421577321F8B56B00EFADF3 /* TouchToRecord-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchToRecord-Bridging-Header.h"; sourceTree = "<group>"; };
+		9421577421F8B56C00EFADF3 /* SCRecordSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecordSessionManager.h; sourceTree = "<group>"; };
+		9421577521F8B56C00EFADF3 /* SCRecordSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecordSessionManager.m; sourceTree = "<group>"; };
+		943E049C21F890C90043997F /* TouchToRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchToRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		943E049F21F890C90043997F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		943E04A121F890C90043997F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		943E04A421F890C90043997F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		943E04A621F890CB0043997F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		943E04A921F890CB0043997F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		943E04AB21F890CB0043997F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		943E04B021F890CB0043997F /* TouchToRecordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchToRecordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		943E04B421F890CB0043997F /* TouchToRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchToRecordTests.swift; sourceTree = "<group>"; };
+		943E04B621F890CB0043997F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		943E04BB21F890CB0043997F /* TouchToRecordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchToRecordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		943E04BF21F890CB0043997F /* TouchToRecordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchToRecordUITests.swift; sourceTree = "<group>"; };
+		943E04C121F890CB0043997F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		943E04CD21F892410043997F /* ViewCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCaptureViewController.swift; sourceTree = "<group>"; };
+		943E04CE21F892410043997F /* ViewCaptureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewCaptureViewController.xib; sourceTree = "<group>"; };
+		9DF394B8E0FA1328D5D78D05 /* Pods-TouchToRecordUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchToRecordUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouchToRecordUITests/Pods-TouchToRecordUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9E3DDE18254A40A7E5CB4081 /* Pods-TouchToRecordTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchToRecordTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouchToRecordTests/Pods-TouchToRecordTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF5A8A6837ECA42A6B5F295C /* Pods_TouchToRecordUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TouchToRecordUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5ACF57A8F6EDB10377CFB88 /* Pods-TouchToRecordTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchToRecordTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouchToRecordTests/Pods-TouchToRecordTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E8E96B8ACBD92FC14506817E /* Pods-TouchToRecordUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchToRecordUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouchToRecordUITests/Pods-TouchToRecordUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		943E049921F890C90043997F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38CAAB80A34790F167CF2625 /* Pods_TouchToRecord.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		943E04AD21F890CB0043997F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A913538BDA0252F642F62BDE /* Pods_TouchToRecordTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		943E04B821F890CB0043997F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C4163B64CC3E2E2A4DE78C /* Pods_TouchToRecordUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8BEF155CDF92EEEFEEE44505 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AA8EFCF2C978853D99F1134 /* Pods_TouchToRecord.framework */,
+				3E9084159B177BBD3F43BAAF /* Pods_TouchToRecordTests.framework */,
+				AF5A8A6837ECA42A6B5F295C /* Pods_TouchToRecordUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9421577121F8B55800EFADF3 /* SCRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				9421577221F8B56000EFADF3 /* Utils */,
+			);
+			path = SCRecorder;
+			sourceTree = "<group>";
+		};
+		9421577221F8B56000EFADF3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9421577421F8B56C00EFADF3 /* SCRecordSessionManager.h */,
+				9421577521F8B56C00EFADF3 /* SCRecordSessionManager.m */,
+				9421577321F8B56B00EFADF3 /* TouchToRecord-Bridging-Header.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		943E049321F890C90043997F = {
+			isa = PBXGroup;
+			children = (
+				943E049E21F890C90043997F /* TouchToRecord */,
+				943E04B321F890CB0043997F /* TouchToRecordTests */,
+				943E04BE21F890CB0043997F /* TouchToRecordUITests */,
+				943E049D21F890C90043997F /* Products */,
+				AEE46AE723E3F881FD9F99E4 /* Pods */,
+				8BEF155CDF92EEEFEEE44505 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		943E049D21F890C90043997F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				943E049C21F890C90043997F /* TouchToRecord.app */,
+				943E04B021F890CB0043997F /* TouchToRecordTests.xctest */,
+				943E04BB21F890CB0043997F /* TouchToRecordUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		943E049E21F890C90043997F /* TouchToRecord */ = {
+			isa = PBXGroup;
+			children = (
+				9421577121F8B55800EFADF3 /* SCRecorder */,
+				943E049F21F890C90043997F /* AppDelegate.swift */,
+				943E04A121F890C90043997F /* ViewController.swift */,
+				943E04A321F890C90043997F /* Main.storyboard */,
+				943E04A621F890CB0043997F /* Assets.xcassets */,
+				943E04A821F890CB0043997F /* LaunchScreen.storyboard */,
+				943E04AB21F890CB0043997F /* Info.plist */,
+				943E04CD21F892410043997F /* ViewCaptureViewController.swift */,
+				943E04CE21F892410043997F /* ViewCaptureViewController.xib */,
+				9421576F21F8AC5E00EFADF3 /* TouchableView.swift */,
+			);
+			path = TouchToRecord;
+			sourceTree = "<group>";
+		};
+		943E04B321F890CB0043997F /* TouchToRecordTests */ = {
+			isa = PBXGroup;
+			children = (
+				943E04B421F890CB0043997F /* TouchToRecordTests.swift */,
+				943E04B621F890CB0043997F /* Info.plist */,
+			);
+			path = TouchToRecordTests;
+			sourceTree = "<group>";
+		};
+		943E04BE21F890CB0043997F /* TouchToRecordUITests */ = {
+			isa = PBXGroup;
+			children = (
+				943E04BF21F890CB0043997F /* TouchToRecordUITests.swift */,
+				943E04C121F890CB0043997F /* Info.plist */,
+			);
+			path = TouchToRecordUITests;
+			sourceTree = "<group>";
+		};
+		AEE46AE723E3F881FD9F99E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F3F2762C4A8DDA262D7BDE2 /* Pods-TouchToRecord.debug.xcconfig */,
+				7C51D4F4A0A9DFCE6E409D55 /* Pods-TouchToRecord.release.xcconfig */,
+				B5ACF57A8F6EDB10377CFB88 /* Pods-TouchToRecordTests.debug.xcconfig */,
+				9E3DDE18254A40A7E5CB4081 /* Pods-TouchToRecordTests.release.xcconfig */,
+				E8E96B8ACBD92FC14506817E /* Pods-TouchToRecordUITests.debug.xcconfig */,
+				9DF394B8E0FA1328D5D78D05 /* Pods-TouchToRecordUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		943E049B21F890C90043997F /* TouchToRecord */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 943E04C421F890CB0043997F /* Build configuration list for PBXNativeTarget "TouchToRecord" */;
+			buildPhases = (
+				4BDE20233052F746BD9D6EFD /* [CP] Check Pods Manifest.lock */,
+				943E049821F890C90043997F /* Sources */,
+				943E049921F890C90043997F /* Frameworks */,
+				943E049A21F890C90043997F /* Resources */,
+				6D440A1C9F556C731A3431DE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TouchToRecord;
+			productName = TouchToRecord;
+			productReference = 943E049C21F890C90043997F /* TouchToRecord.app */;
+			productType = "com.apple.product-type.application";
+		};
+		943E04AF21F890CB0043997F /* TouchToRecordTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 943E04C721F890CB0043997F /* Build configuration list for PBXNativeTarget "TouchToRecordTests" */;
+			buildPhases = (
+				07620C73E6D2278291959808 /* [CP] Check Pods Manifest.lock */,
+				943E04AC21F890CB0043997F /* Sources */,
+				943E04AD21F890CB0043997F /* Frameworks */,
+				943E04AE21F890CB0043997F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				943E04B221F890CB0043997F /* PBXTargetDependency */,
+			);
+			name = TouchToRecordTests;
+			productName = TouchToRecordTests;
+			productReference = 943E04B021F890CB0043997F /* TouchToRecordTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		943E04BA21F890CB0043997F /* TouchToRecordUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 943E04CA21F890CB0043997F /* Build configuration list for PBXNativeTarget "TouchToRecordUITests" */;
+			buildPhases = (
+				E1932E837C7ED7C1655253CB /* [CP] Check Pods Manifest.lock */,
+				943E04B721F890CB0043997F /* Sources */,
+				943E04B821F890CB0043997F /* Frameworks */,
+				943E04B921F890CB0043997F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				943E04BD21F890CB0043997F /* PBXTargetDependency */,
+			);
+			name = TouchToRecordUITests;
+			productName = TouchToRecordUITests;
+			productReference = 943E04BB21F890CB0043997F /* TouchToRecordUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		943E049421F890C90043997F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = bechoed;
+				TargetAttributes = {
+					943E049B21F890C90043997F = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+					943E04AF21F890CB0043997F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 943E049B21F890C90043997F;
+					};
+					943E04BA21F890CB0043997F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 943E049B21F890C90043997F;
+					};
+				};
+			};
+			buildConfigurationList = 943E049721F890C90043997F /* Build configuration list for PBXProject "TouchToRecord" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 943E049321F890C90043997F;
+			productRefGroup = 943E049D21F890C90043997F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				943E049B21F890C90043997F /* TouchToRecord */,
+				943E04AF21F890CB0043997F /* TouchToRecordTests */,
+				943E04BA21F890CB0043997F /* TouchToRecordUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		943E049A21F890C90043997F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				943E04D021F892410043997F /* ViewCaptureViewController.xib in Resources */,
+				943E04AA21F890CB0043997F /* LaunchScreen.storyboard in Resources */,
+				943E04A721F890CB0043997F /* Assets.xcassets in Resources */,
+				943E04A521F890C90043997F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		943E04AE21F890CB0043997F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		943E04B921F890CB0043997F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07620C73E6D2278291959808 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TouchToRecordTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BDE20233052F746BD9D6EFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TouchToRecord-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D440A1C9F556C731A3431DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TouchToRecord/Pods-TouchToRecord-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CircleProgressView/CircleProgressView.framework",
+				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
+				"${BUILT_PRODUCTS_DIR}/SCRecorder/SCRecorder.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCRecorder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TouchToRecord/Pods-TouchToRecord-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1932E837C7ED7C1655253CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TouchToRecordUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		943E049821F890C90043997F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9421577021F8AC5E00EFADF3 /* TouchableView.swift in Sources */,
+				943E04A221F890C90043997F /* ViewController.swift in Sources */,
+				9421577621F8B56C00EFADF3 /* SCRecordSessionManager.m in Sources */,
+				943E04A021F890C90043997F /* AppDelegate.swift in Sources */,
+				943E04CF21F892410043997F /* ViewCaptureViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		943E04AC21F890CB0043997F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				943E04B521F890CB0043997F /* TouchToRecordTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		943E04B721F890CB0043997F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				943E04C021F890CB0043997F /* TouchToRecordUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		943E04B221F890CB0043997F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 943E049B21F890C90043997F /* TouchToRecord */;
+			targetProxy = 943E04B121F890CB0043997F /* PBXContainerItemProxy */;
+		};
+		943E04BD21F890CB0043997F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 943E049B21F890C90043997F /* TouchToRecord */;
+			targetProxy = 943E04BC21F890CB0043997F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		943E04A321F890C90043997F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				943E04A421F890C90043997F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		943E04A821F890CB0043997F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				943E04A921F890CB0043997F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		943E04C221F890CB0043997F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		943E04C321F890CB0043997F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		943E04C521F890CB0043997F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F3F2762C4A8DDA262D7BDE2 /* Pods-TouchToRecord.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZM2Q82VPU;
+				INFOPLIST_FILE = TouchToRecord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bechoed.TouchToRecord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TouchToRecord/SCRecorder/Utils/TouchToRecord-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		943E04C621F890CB0043997F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C51D4F4A0A9DFCE6E409D55 /* Pods-TouchToRecord.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZM2Q82VPU;
+				INFOPLIST_FILE = TouchToRecord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bechoed.TouchToRecord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TouchToRecord/SCRecorder/Utils/TouchToRecord-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		943E04C821F890CB0043997F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5ACF57A8F6EDB10377CFB88 /* Pods-TouchToRecordTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZM2Q82VPU;
+				INFOPLIST_FILE = TouchToRecordTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bechoed.TouchToRecordTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TouchToRecord.app/TouchToRecord";
+			};
+			name = Debug;
+		};
+		943E04C921F890CB0043997F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E3DDE18254A40A7E5CB4081 /* Pods-TouchToRecordTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZM2Q82VPU;
+				INFOPLIST_FILE = TouchToRecordTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bechoed.TouchToRecordTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TouchToRecord.app/TouchToRecord";
+			};
+			name = Release;
+		};
+		943E04CB21F890CB0043997F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8E96B8ACBD92FC14506817E /* Pods-TouchToRecordUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZM2Q82VPU;
+				INFOPLIST_FILE = TouchToRecordUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bechoed.TouchToRecordUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TouchToRecord;
+			};
+			name = Debug;
+		};
+		943E04CC21F890CB0043997F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DF394B8E0FA1328D5D78D05 /* Pods-TouchToRecordUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZM2Q82VPU;
+				INFOPLIST_FILE = TouchToRecordUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bechoed.TouchToRecordUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TouchToRecord;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		943E049721F890C90043997F /* Build configuration list for PBXProject "TouchToRecord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				943E04C221F890CB0043997F /* Debug */,
+				943E04C321F890CB0043997F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		943E04C421F890CB0043997F /* Build configuration list for PBXNativeTarget "TouchToRecord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				943E04C521F890CB0043997F /* Debug */,
+				943E04C621F890CB0043997F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		943E04C721F890CB0043997F /* Build configuration list for PBXNativeTarget "TouchToRecordTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				943E04C821F890CB0043997F /* Debug */,
+				943E04C921F890CB0043997F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		943E04CA21F890CB0043997F /* Build configuration list for PBXNativeTarget "TouchToRecordUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				943E04CB21F890CB0043997F /* Debug */,
+				943E04CC21F890CB0043997F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 943E049421F890C90043997F /* Project object */;
+}
