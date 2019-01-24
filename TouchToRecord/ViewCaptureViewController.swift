@@ -15,10 +15,6 @@ import CircleProgressView
 
 class ViewCaptureViewController: UIViewController {
     
-    //    private weak var preview: UIView?
-    //    private weak var recordButton: UIButton?
-    //    private var nextLevel = NextLevel.shared
-    
     @IBOutlet weak var preview: UIView!
     @IBOutlet weak var recordView: TouchableView!
     @IBOutlet weak var progressView: CircleProgressView!
@@ -28,9 +24,6 @@ class ViewCaptureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { [weak self] in
-        //            self?.requestAuthorization()
-        //        }
         recorder.captureSessionPreset = SCRecorderTools.bestCaptureSessionPresetCompatibleWithAllDevices()
         recorder.delegate = self
         recorder.session = SCRecordSession()
