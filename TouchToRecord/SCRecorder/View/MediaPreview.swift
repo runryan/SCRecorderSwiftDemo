@@ -1,5 +1,5 @@
 //
-//  VideoPlayerView.swift
+//  MediaPreview.swift
 //  TouchToRecord
 //
 //  Created by ryan on 2019/1/24.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class VideoPlayerView: UIView {
+class MediaPreview: UIView {
 
     private var player: SCPlayer?
+    private weak var playerView: SCVideoPlayerView?
     
     func previewImage(_ image: UIImage) {
         let imageView = UIImageView()
@@ -26,6 +27,7 @@ class VideoPlayerView: UIView {
             let player = SCPlayer()
             self.player = player
             let playerView = SCVideoPlayerView(player: player)
+            self.playerView = playerView
             playerView.playerLayer?.videoGravity = .resizeAspectFill
             addSubview(playerView)
             playerView.snp.makeConstraints { make in
@@ -42,6 +44,13 @@ class VideoPlayerView: UIView {
     
     func pause() {
         player?.pause()
+    }
+    
+    func stop() {
+        pause()
+        self.playerView?.removeFromSuperview()
+        player = nil
+        removeFromSuperview()
     }
     
     func viewWillAppear() {

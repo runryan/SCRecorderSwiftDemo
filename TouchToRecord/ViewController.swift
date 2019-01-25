@@ -20,13 +20,24 @@ class ViewController: UIViewController{
         print("ViewController Touch Begin ... ")
         if captureViewController == nil {
             let viewController = CaptureViewController()
-            viewController.didRecordVideo = { [weak self] in
+            viewController.maxRecordDuration = 3
+            viewController.completeHandler = { [weak self] success, asset, error in
                 self?.dismiss(animated: true, completion: nil)
                 self?.captureViewController = nil
+                if success {
+                    print("拍摄成功\(asset!.localIdentifier)")
+                    return
+                }
+                print("拍摄失败")
             }
-            present(viewController, animated: true, completion: nil)
+            show(viewController, sender: nil)
             self.captureViewController = viewController
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("---- viewWillAppear --- ")
     }
 }
 

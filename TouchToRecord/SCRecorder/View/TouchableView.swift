@@ -16,11 +16,13 @@ enum TouchAction {
 
 class TouchableView: UIView {
     
-    var touchCallback: ((Bool) -> Void)?
     var touchActionCallback : ((TouchAction) -> Void)?
     
-    var islongPressAction = false
-    var isTouchEnded = true
+    private var islongPressAction = false
+    private var isTouchEnded = true
+    
+    var enableTap = true
+    var enableLongPress = true
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,11 +47,16 @@ class TouchableView: UIView {
     }
     
     @objc private func tap() {
-        touchActionCallback?(.tap)
+        if enableTap {
+            touchActionCallback?(.tap)
+        }
     }
     
     @objc private func longPress() {
-        touchActionCallback?(.longPress)
+        if enableLongPress {
+            touchActionCallback?(.longPress)
+            return
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -68,21 +75,24 @@ class TouchableView: UIView {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         isTouchEnded = true
-        if islongPressAction {
+        if islongPressAction, enableLongPress {
             touchActionCallback?(.endLongPress)
         }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         isTouchEnded = true
-        if islongPressAction {
+        if islongPressAction, enableLongPress {
             touchActionCallback?(.endLongPress)
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        backgroundColor = .clear
         clipsToBounds = true
         layer.cornerRadius = bounds.size.width / 2
     }
+    
+    
 }

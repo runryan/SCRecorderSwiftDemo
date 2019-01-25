@@ -9,13 +9,8 @@
 /* Begin PBXBuildFile section */
 		10C4163B64CC3E2E2A4DE78C /* Pods_TouchToRecordUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5A8A6837ECA42A6B5F295C /* Pods_TouchToRecordUITests.framework */; };
 		38CAAB80A34790F167CF2625 /* Pods_TouchToRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA8EFCF2C978853D99F1134 /* Pods_TouchToRecord.framework */; };
-		9421577021F8AC5E00EFADF3 /* TouchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9421576F21F8AC5E00EFADF3 /* TouchableView.swift */; };
 		9421577621F8B56C00EFADF3 /* SCRecordSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9421577521F8B56C00EFADF3 /* SCRecordSessionManager.m */; };
-		9421577B21F9E58500EFADF3 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9421577A21F9E58500EFADF3 /* VideoPlayerView.swift */; };
-		9421578221F9E9CD00EFADF3 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9421578021F9E9CD00EFADF3 /* CaptureViewController.swift */; };
-		9421578321F9E9CD00EFADF3 /* CaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9421578121F9E9CD00EFADF3 /* CaptureViewController.xib */; };
-		943C89C721F959A100537EB9 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C89C621F959A100537EB9 /* AuthenticationHelper.swift */; };
-		943C89D321F9CB1200537EB9 /* AuthorizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C89D221F9CB1200537EB9 /* AuthorizationHelper.swift */; };
+		943C89C721F959A100537EB9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		943E04A021F890C90043997F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E049F21F890C90043997F /* AppDelegate.swift */; };
 		943E04A221F890C90043997F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E04A121F890C90043997F /* ViewController.swift */; };
 		943E04A521F890C90043997F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943E04A321F890C90043997F /* Main.storyboard */; };
@@ -23,8 +18,12 @@
 		943E04AA21F890CB0043997F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943E04A821F890CB0043997F /* LaunchScreen.storyboard */; };
 		943E04B521F890CB0043997F /* TouchToRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E04B421F890CB0043997F /* TouchToRecordTests.swift */; };
 		943E04C021F890CB0043997F /* TouchToRecordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E04BF21F890CB0043997F /* TouchToRecordUITests.swift */; };
-		943E04CF21F892410043997F /* ViewCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E04CD21F892410043997F /* ViewCaptureViewController.swift */; };
-		943E04D021F892410043997F /* ViewCaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 943E04CE21F892410043997F /* ViewCaptureViewController.xib */; };
+		9452EE8921FA9DC90052B00B /* AuthorizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452EE8821FA9DC90052B00B /* AuthorizationHelper.swift */; };
+		9452EE9221FAF57B0052B00B /* MediaPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452EE8C21FAF57A0052B00B /* MediaPreview.swift */; };
+		9452EE9321FAF57B0052B00B /* TouchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452EE8D21FAF57A0052B00B /* TouchableView.swift */; };
+		9452EE9421FAF57B0052B00B /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452EE8E21FAF57A0052B00B /* CaptureViewController.swift */; };
+		9452EE9621FAF57B0052B00B /* VisualEffectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452EE9021FAF57B0052B00B /* VisualEffectButton.swift */; };
+		9452EE9721FAF57B0052B00B /* CaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9452EE9121FAF57B0052B00B /* CaptureViewController.xib */; };
 		A913538BDA0252F642F62BDE /* Pods_TouchToRecordTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9084159B177BBD3F43BAAF /* Pods_TouchToRecordTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,13 +49,9 @@
 		3F3F2762C4A8DDA262D7BDE2 /* Pods-TouchToRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchToRecord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouchToRecord/Pods-TouchToRecord.debug.xcconfig"; sourceTree = "<group>"; };
 		6AA8EFCF2C978853D99F1134 /* Pods_TouchToRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TouchToRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C51D4F4A0A9DFCE6E409D55 /* Pods-TouchToRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchToRecord.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouchToRecord/Pods-TouchToRecord.release.xcconfig"; sourceTree = "<group>"; };
-		9421576F21F8AC5E00EFADF3 /* TouchableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableView.swift; sourceTree = "<group>"; };
 		9421577321F8B56B00EFADF3 /* TouchToRecord-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchToRecord-Bridging-Header.h"; sourceTree = "<group>"; };
 		9421577421F8B56C00EFADF3 /* SCRecordSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecordSessionManager.h; sourceTree = "<group>"; };
 		9421577521F8B56C00EFADF3 /* SCRecordSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecordSessionManager.m; sourceTree = "<group>"; };
-		9421577A21F9E58500EFADF3 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
-		9421578021F9E9CD00EFADF3 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
-		9421578121F9E9CD00EFADF3 /* CaptureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaptureViewController.xib; sourceTree = "<group>"; };
 		943E049C21F890C90043997F /* TouchToRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchToRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		943E049F21F890C90043997F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		943E04A121F890C90043997F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,8 +65,12 @@
 		943E04BB21F890CB0043997F /* TouchToRecordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchToRecordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		943E04BF21F890CB0043997F /* TouchToRecordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchToRecordUITests.swift; sourceTree = "<group>"; };
 		943E04C121F890CB0043997F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		943E04CD21F892410043997F /* ViewCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCaptureViewController.swift; sourceTree = "<group>"; };
-		943E04CE21F892410043997F /* ViewCaptureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewCaptureViewController.xib; sourceTree = "<group>"; };
+		9452EE8821FA9DC90052B00B /* AuthorizationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthorizationHelper.swift; path = TouchToRecord/SCRecorder/Utils/AuthorizationHelper.swift; sourceTree = SOURCE_ROOT; };
+		9452EE8C21FAF57A0052B00B /* MediaPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPreview.swift; sourceTree = "<group>"; };
+		9452EE8D21FAF57A0052B00B /* TouchableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchableView.swift; sourceTree = "<group>"; };
+		9452EE8E21FAF57A0052B00B /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		9452EE9021FAF57B0052B00B /* VisualEffectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectButton.swift; sourceTree = "<group>"; };
+		9452EE9121FAF57B0052B00B /* CaptureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaptureViewController.xib; sourceTree = "<group>"; };
 		9DF394B8E0FA1328D5D78D05 /* Pods-TouchToRecordUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchToRecordUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouchToRecordUITests/Pods-TouchToRecordUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9E3DDE18254A40A7E5CB4081 /* Pods-TouchToRecordTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchToRecordTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouchToRecordTests/Pods-TouchToRecordTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF5A8A6837ECA42A6B5F295C /* Pods_TouchToRecordUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TouchToRecordUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,8 +119,9 @@
 		9421577121F8B55800EFADF3 /* SCRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				9452EE9921FAF5990052B00B /* View */,
+				9452EE9821FAF57F0052B00B /* Controller */,
 				9421577221F8B56000EFADF3 /* Utils */,
-				943C89D221F9CB1200537EB9 /* AuthorizationHelper.swift */,
 			);
 			path = SCRecorder;
 			sourceTree = "<group>";
@@ -129,6 +129,7 @@
 		9421577221F8B56000EFADF3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9452EE8821FA9DC90052B00B /* AuthorizationHelper.swift */,
 				9421577421F8B56C00EFADF3 /* SCRecordSessionManager.h */,
 				9421577521F8B56C00EFADF3 /* SCRecordSessionManager.m */,
 				9421577321F8B56B00EFADF3 /* TouchToRecord-Bridging-Header.h */,
@@ -168,12 +169,6 @@
 				943E04A621F890CB0043997F /* Assets.xcassets */,
 				943E04A821F890CB0043997F /* LaunchScreen.storyboard */,
 				943E04AB21F890CB0043997F /* Info.plist */,
-				943E04CD21F892410043997F /* ViewCaptureViewController.swift */,
-				943E04CE21F892410043997F /* ViewCaptureViewController.xib */,
-				9421578021F9E9CD00EFADF3 /* CaptureViewController.swift */,
-				9421578121F9E9CD00EFADF3 /* CaptureViewController.xib */,
-				9421576F21F8AC5E00EFADF3 /* TouchableView.swift */,
-				9421577A21F9E58500EFADF3 /* VideoPlayerView.swift */,
 			);
 			path = TouchToRecord;
 			sourceTree = "<group>";
@@ -194,6 +189,25 @@
 				943E04C121F890CB0043997F /* Info.plist */,
 			);
 			path = TouchToRecordUITests;
+			sourceTree = "<group>";
+		};
+		9452EE9821FAF57F0052B00B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9452EE8E21FAF57A0052B00B /* CaptureViewController.swift */,
+				9452EE9121FAF57B0052B00B /* CaptureViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9452EE9921FAF5990052B00B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9452EE8C21FAF57A0052B00B /* MediaPreview.swift */,
+				9452EE8D21FAF57A0052B00B /* TouchableView.swift */,
+				9452EE9021FAF57B0052B00B /* VisualEffectButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AEE46AE723E3F881FD9F99E4 /* Pods */ = {
@@ -318,10 +332,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				943E04D021F892410043997F /* ViewCaptureViewController.xib in Resources */,
 				943E04AA21F890CB0043997F /* LaunchScreen.storyboard in Resources */,
+				9452EE9721FAF57B0052B00B /* CaptureViewController.xib in Resources */,
 				943E04A721F890CB0043997F /* Assets.xcassets in Resources */,
-				9421578321F9E9CD00EFADF3 /* CaptureViewController.xib in Resources */,
 				943E04A521F890C90043997F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,14 +455,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9421577021F8AC5E00EFADF3 /* TouchableView.swift in Sources */,
-				9421578221F9E9CD00EFADF3 /* CaptureViewController.swift in Sources */,
 				943E04A221F890C90043997F /* ViewController.swift in Sources */,
+				9452EE9421FAF57B0052B00B /* CaptureViewController.swift in Sources */,
+				9452EE9321FAF57B0052B00B /* TouchableView.swift in Sources */,
+				9452EE9221FAF57B0052B00B /* MediaPreview.swift in Sources */,
 				9421577621F8B56C00EFADF3 /* SCRecordSessionManager.m in Sources */,
 				943E04A021F890C90043997F /* AppDelegate.swift in Sources */,
-				943C89C721F959A100537EB9 /* AuthenticationHelper.swift in Sources */,
-				943E04CF21F892410043997F /* ViewCaptureViewController.swift in Sources */,
-				9421577B21F9E58500EFADF3 /* VideoPlayerView.swift in Sources */,
+				9452EE8921FA9DC90052B00B /* AuthorizationHelper.swift in Sources */,
+				9452EE9621FAF57B0052B00B /* VisualEffectButton.swift in Sources */,
+				943C89C721F959A100537EB9 /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
