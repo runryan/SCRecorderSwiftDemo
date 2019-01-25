@@ -11,11 +11,14 @@
 		38CAAB80A34790F167CF2625 /* Pods_TouchToRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA8EFCF2C978853D99F1134 /* Pods_TouchToRecord.framework */; };
 		9421577021F8AC5E00EFADF3 /* TouchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9421576F21F8AC5E00EFADF3 /* TouchableView.swift */; };
 		9421577621F8B56C00EFADF3 /* SCRecordSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9421577521F8B56C00EFADF3 /* SCRecordSessionManager.m */; };
+<<<<<<< HEAD
+		943C89C721F959A100537EB9 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C89C621F959A100537EB9 /* AuthenticationHelper.swift */; };
+		943C89D321F9CB1200537EB9 /* AuthorizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C89D221F9CB1200537EB9 /* AuthorizationHelper.swift */; };
+=======
 		9421577B21F9E58500EFADF3 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9421577A21F9E58500EFADF3 /* VideoPlayerView.swift */; };
 		9421578221F9E9CD00EFADF3 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9421578021F9E9CD00EFADF3 /* CaptureViewController.swift */; };
 		9421578321F9E9CD00EFADF3 /* CaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9421578121F9E9CD00EFADF3 /* CaptureViewController.xib */; };
-		943C89C721F959A100537EB9 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C89C621F959A100537EB9 /* AuthenticationHelper.swift */; };
-		943C89D321F9CB1200537EB9 /* AuthorizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C89D221F9CB1200537EB9 /* AuthorizationHelper.swift */; };
+>>>>>>> 18b9b81d7f21e7e50035c59e043e719ab2b3aa2f
 		943E04A021F890C90043997F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E049F21F890C90043997F /* AppDelegate.swift */; };
 		943E04A221F890C90043997F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E04A121F890C90043997F /* ViewController.swift */; };
 		943E04A521F890C90043997F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943E04A321F890C90043997F /* Main.storyboard */; };
@@ -54,9 +57,14 @@
 		9421577321F8B56B00EFADF3 /* TouchToRecord-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchToRecord-Bridging-Header.h"; sourceTree = "<group>"; };
 		9421577421F8B56C00EFADF3 /* SCRecordSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecordSessionManager.h; sourceTree = "<group>"; };
 		9421577521F8B56C00EFADF3 /* SCRecordSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecordSessionManager.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		943C89C621F959A100537EB9 /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
+		943C89D221F9CB1200537EB9 /* AuthorizationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationHelper.swift; sourceTree = "<group>"; };
+=======
 		9421577A21F9E58500EFADF3 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		9421578021F9E9CD00EFADF3 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		9421578121F9E9CD00EFADF3 /* CaptureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaptureViewController.xib; sourceTree = "<group>"; };
+>>>>>>> 18b9b81d7f21e7e50035c59e043e719ab2b3aa2f
 		943E049C21F890C90043997F /* TouchToRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchToRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		943E049F21F890C90043997F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		943E04A121F890C90043997F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +181,11 @@
 				9421578021F9E9CD00EFADF3 /* CaptureViewController.swift */,
 				9421578121F9E9CD00EFADF3 /* CaptureViewController.xib */,
 				9421576F21F8AC5E00EFADF3 /* TouchableView.swift */,
+<<<<<<< HEAD
+				943C89C621F959A100537EB9 /* AuthenticationHelper.swift */,
+=======
 				9421577A21F9E58500EFADF3 /* VideoPlayerView.swift */,
+>>>>>>> 18b9b81d7f21e7e50035c59e043e719ab2b3aa2f
 			);
 			path = TouchToRecord;
 			sourceTree = "<group>";
@@ -443,7 +455,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9421577021F8AC5E00EFADF3 /* TouchableView.swift in Sources */,
+<<<<<<< HEAD
+				943C89D321F9CB1200537EB9 /* AuthorizationHelper.swift in Sources */,
+=======
 				9421578221F9E9CD00EFADF3 /* CaptureViewController.swift in Sources */,
+>>>>>>> 18b9b81d7f21e7e50035c59e043e719ab2b3aa2f
 				943E04A221F890C90043997F /* ViewController.swift in Sources */,
 				9421577621F8B56C00EFADF3 /* SCRecordSessionManager.m in Sources */,
 				943E04A021F890C90043997F /* AppDelegate.swift in Sources */,

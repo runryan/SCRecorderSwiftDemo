@@ -26,6 +26,45 @@ class ViewCaptureViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestAuthorizations()
+    }
+    
+    // MARK: 获取所有的权限
+    private func requestAuthorizations() {
+        AuthorizationHelper.shared.requestAuthorizations { isAuthorized in
+            DispatchQueue.main.async { [weak self] in
+                self?.isAuthorized = isAuthorized
+                if isAuthorized {
+                    self?.setupRecorderAnControl()
+                    return
+                }
+                self?.showUnAuthorizedDialog()
+            }
+        }
+    }
+    
+    // MARK: 显示未授权弹窗
+    private func showUnAuthorizedDialog() {
+        let unauthorizedDialog  = UIAlertController(title: "权限获取失败", message: "APP需要访问您的相机、麦克风以及照片才能继续下面的操作，请APP开启权限后再试", preferredStyle: .alert)
+        self.unauthorizedDialog = unauthorizedDialog
+        let permitAction = UIAlertAction(title: "开启权限", style: .default) { _ in
+            UIApplication.shared.open(URL(string: "prefs:root=Privacy")!)
+        }
+        let denyAction = UIAlertAction(title: "拒绝", style: .default) { [weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
+        }
+        unauthorizedDialog.addAction(permitAction)
+        unauthorizedDialog.addAction(denyAction)
+        present(unauthorizedDialog, animated: true, completion: nil)
+    }
+    
+    private func setupRecorderAnControl() {
+        setupRecorder()
+        dealWithRecordControl()
+    }
+    
+    // MARK: 创建VideoRecorder
+    private func setupRecorder() {
         recorder.captureSessionPreset = SCRecorderTools.bestCaptureSessionPresetCompatibleWithAllDevices()
         recorder.delegate = self
         recorder.session = SCRecordSession()
