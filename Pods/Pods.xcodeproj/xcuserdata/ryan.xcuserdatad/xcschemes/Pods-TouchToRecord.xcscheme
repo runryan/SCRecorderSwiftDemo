@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0A7AD70488B1F80C125A59F457DDE067"
+               BlueprintIdentifier = "EA4E69FFD39C57E786003C18B825C511"
                BuildableName = "Pods_TouchToRecord.framework"
                BlueprintName = "Pods-TouchToRecord"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0A7AD70488B1F80C125A59F457DDE067"
+            BlueprintIdentifier = "EA4E69FFD39C57E786003C18B825C511"
             BuildableName = "Pods_TouchToRecord.framework"
             BlueprintName = "Pods-TouchToRecord"
             ReferencedContainer = "container:Pods.xcodeproj">

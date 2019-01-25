@@ -7,30 +7,64 @@
 //
 
 import UIKit
-import NextLevel
 import SnapKit
 import AVFoundation
 import SCRecorder
 import CircleProgressView
+import Photos
 
 class ViewCaptureViewController: UIViewController {
-    
-    //    private weak var preview: UIView?
-    //    private weak var recordButton: UIButton?
-    //    private var nextLevel = NextLevel.shared
     
     @IBOutlet weak var preview: UIView!
     @IBOutlet weak var recordView: TouchableView!
     @IBOutlet weak var progressView: CircleProgressView!
     
-    lazy var recorder = SCRecorder.shared()
-    var exportSession: SCAssetExportSession?
+    private var unauthorizedDialog: UIAlertController?
+    private var isAuthorized = false
     
+    lazy var recorder = SCRecorder.shared()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { [weak self] in
-        //            self?.requestAuthorization()
-        //        }
+        requestAuthorizations()
+    }
+    
+    // MARK: 获取所有的权限
+    private func requestAuthorizations() {
+        AuthorizationHelper.shared.requestAuthorizations { isAuthorized in
+            DispatchQueue.main.async { [weak self] in
+                self?.isAuthorized = isAuthorized
+                if isAuthorized {
+                    self?.setupRecorderAnControl()
+                    return
+                }
+                self?.showUnAuthorizedDialog()
+            }
+        }
+    }
+    
+    // MARK: 显示未授权弹窗
+    private func showUnAuthorizedDialog() {
+        let unauthorizedDialog  = UIAlertController(title: "权限获取失败", message: "APP需要访问您的相机、麦克风以及照片才能继续下面的操作，请APP开启权限后再试", preferredStyle: .alert)
+        self.unauthorizedDialog = unauthorizedDialog
+        let permitAction = UIAlertAction(title: "开启权限", style: .default) { _ in
+            UIApplication.shared.open(URL(string: "prefs:root=Privacy")!)
+        }
+        let denyAction = UIAlertAction(title: "拒绝", style: .default) { [weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
+        }
+        unauthorizedDialog.addAction(permitAction)
+        unauthorizedDialog.addAction(denyAction)
+        present(unauthorizedDialog, animated: true, completion: nil)
+    }
+    
+    private func setupRecorderAnControl() {
+        setupRecorder()
+        dealWithRecordControl()
+    }
+    
+    // MARK: 创建VideoRecorder
+    private func setupRecorder() {
         recorder.captureSessionPreset = SCRecorderTools.bestCaptureSessionPresetCompatibleWithAllDevices()
         recorder.delegate = self
         recorder.session = SCRecordSession()
@@ -43,13 +77,17 @@ class ViewCaptureViewController: UIViewController {
         } catch {
             print("出错了\(error)")
         }
+    }
+    
+    // MARK: 开始和停止录制
+    private func dealWithRecordControl() {
         recordView.touchCallback = { [weak self] isTouching in
             if isTouching {
                 self?.startRecord()
-            } else {
-                self?.recorder.pause { [weak self] in
-                    self?.stopRecord()
-                }
+                return
+            }
+            self?.recorder.pause { [weak self] in
+                self?.stopRecord()
             }
         }
     }
@@ -62,6 +100,7 @@ class ViewCaptureViewController: UIViewController {
         }
     }
     
+    // MARK: 更新进度
     func updateTime() {
         var recordTime = CMTime.zero
         if let session = recorder.session {
@@ -72,12 +111,11 @@ class ViewCaptureViewController: UIViewController {
         progressView.progress = duration / 15
     }
     
-    func startRecord() {
+    private func startRecord() {
         recorder.record()
     }
     
-    func stopRecord() {
-        
+    private func stopRecord() {
         SCRecordSessionManager.sharedInstance()?.save(recorder.session)
         let exportSession = SCAssetExportSession(asset: recorder.session!.assetRepresentingSegments())
         exportSession.videoConfiguration.preset = SCPresetLowQuality
@@ -92,16 +130,20 @@ class ViewCaptureViewController: UIViewController {
             guard let `self` = self else {
                 return
             }
-            if self.exportSession?.cancelled == true {
+            if exportSession.cancelled == true {
                 print("导出取消了")
                 return
             }
-            guard let error = self.exportSession?.error else {
+            guard let error = exportSession.error else {
                 print("导出成功")
                 SCSaveToCameraRollOperation().saveVideoURL(exportSession.outputUrl!, completion: { (url, error) in
                     guard let error = error else {
-                        print("保存到了相册\(url ?? "")")
-                        self.exportSession = nil
+                        if let videoURL = URL(string: url ?? "") {
+                            print("获取视频的PHAsset")
+                            self.generateVideoAsset(videoURL: videoURL)
+                        } else {
+                            print("保存到了相册路径为空？？？")
+                        }
                         return
                     }
                     print("保存到相册失败\(error)")
@@ -110,8 +152,28 @@ class ViewCaptureViewController: UIViewController {
             }
             print("导出出错了\(error)")
         }
-        self.exportSession = exportSession
-        
+    }
+    
+    private func generateVideoAsset(videoURL: URL) {
+        var identifier: String?
+        PHPhotoLibrary.shared().performChanges({
+           let request = PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: videoURL)
+            identifier = request?.placeholderForCreatedAsset?.localIdentifier
+        }, completionHandler: { saved, error in
+            if !saved {
+                print("资源保存失败…… \(error!)")
+                return
+            }
+            guard let identifier = identifier else {
+                 print("资源保存失败…… identifier为空")
+                return
+            }
+            if let asset = PHAsset.fetchAssets(withLocalIdentifiers: [identifier], options: nil).firstObject {
+                print("资源获取成功……")
+            } else {
+                print("资源获取失败……")
+            }
+        })
     }
     
     override func viewDidLayoutSubviews() {
@@ -121,6 +183,7 @@ class ViewCaptureViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        requestAuthorizations()
         prepareSession()
     }
 
@@ -185,261 +248,4 @@ extension ViewCaptureViewController: SCRecorderDelegate {
 extension ViewCaptureViewController : SCAssetExportSessionDelegate {
     
 }
-
-//extension ViewCaptureViewController : NextLevelDelegate {
-//
-//    func requestAuthorization() {
-//        if NextLevel.shared.authorizationStatus(forMediaType: .video) == .authorized
-//            && NextLevel.shared.authorizationStatus(forMediaType: .audio) == .authorized{
-//            setupNextlevel()
-//            return
-//        }
-//        NextLevel.shared.requestAuthorization(forMediaType: .video)
-//        NextLevel.shared.requestAuthorization(forMediaType: .audio)
-//    }
-//
-//    private func setupNextlevel() {
-////        nextLevel.delegate = self
-////        nextLevel.deviceDelegate = self
-////        nextLevel.videoDelegate = self
-////        nextLevel.photoDelegate = self
-////        nextLevel.captureMode = .video
-////        nextLevel.devicePosition = .back
-////        nextLevel.videoConfiguration.preset = .low
-//
-//        setupPreview()
-//        setupRecordButton()
-//        startNextLevel()
-//    }
-//
-//    private func setupPreview() {
-//        let preview = UIView()
-//        view.addSubview(preview)
-//        preview.snp.makeConstraints { make in
-//            make.edges.equalTo(self.view)
-//        }
-//        preview.layoutIfNeeded()
-//        let previewLayer = NextLevel.shared.previewLayer
-//        previewLayer.frame = preview.bounds
-//        preview.layer.addSublayer(previewLayer)
-//        self.preview = preview
-//    }
-//
-//    private func startNextLevel() {
-//        do {
-//            try NextLevel.shared.start()
-//        } catch {
-//            print("启动失败……\(error)")
-//        }
-//    }
-//
-//    private func setupRecordButton() {
-//        let recordButton = UIButton()
-//        recordButton.backgroundColor = .red
-//        self.recordButton = recordButton
-//        recordButton.addTarget(self, action: #selector(controlRecord), for: .touchUpInside)
-//        recordButton.setTitle("开始录制", for: .normal)
-//        view.addSubview(recordButton)
-//        recordButton.snp.makeConstraints { make in
-//            make.centerX.equalTo(self.view)
-//            make.bottom.equalTo(self.view).offset(-44)
-//            make.width.equalTo(self.view)
-//        }
-//    }
-//
-//    @objc private func controlRecord() {
-//        if NextLevel.shared.isRecording {
-//            NextLevel.shared.pause()
-//            nextLevel.session?.mergeClips(usingPreset: AVAssetExportPreset640x480, completionHandler: { (url, error) in
-//                if let url = url {
-//                    print("视频保存的位置为\(url)")
-//                    return
-//                }
-//                print("导出出错了\(error!)")
-//            })
-//            NextLevel.shared.stop()
-//            return
-//        }
-//        nextLevel.record()
-//    }
-//
-//
-//    func nextLevel(_ nextLevel: NextLevel, didUpdateAuthorizationStatus status: NextLevelAuthorizationStatus, forMediaType mediaType: AVMediaType) {
-//        switch status {
-//        case .notDetermined:
-//            requestAuthorization()
-//        case .notAuthorized:
-//            print("相机被禁用")
-//        case .authorized:
-//            setupNextlevel()
-//        }
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didUpdateVideoConfiguration videoConfiguration: NextLevelVideoConfiguration) {
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didUpdateAudioConfiguration audioConfiguration: NextLevelAudioConfiguration) {
-//    }
-//
-//    func nextLevelSessionWillStart(_ nextLevel: NextLevel) {
-//    }
-//
-//    func nextLevelSessionDidStart(_ nextLevel: NextLevel) {
-//    }
-//
-//    func nextLevelSessionDidStop(_ nextLevel: NextLevel) {
-//    }
-//
-//    func nextLevelSessionWasInterrupted(_ nextLevel: NextLevel) {
-//    }
-//
-//    func nextLevelSessionInterruptionEnded(_ nextLevel: NextLevel) {
-//    }
-//
-//    func nextLevelCaptureModeWillChange(_ nextLevel: NextLevel) {
-//    }
-//
-//    func nextLevelCaptureModeDidChange(_ nextLevel: NextLevel) {
-//    }
-//
-//}
-//
-//extension ViewCaptureViewController : NextLevelVideoDelegate, NextLevelDeviceDelegate  {
-//    func nextLevel(_ nextLevel: NextLevel, didUpdateVideoZoomFactor videoZoomFactor: Float) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didChangeLensPosition lensPosition: Float) {
-//    }
-//
-//
-//    func nextLevelDevicePositionWillChange(_ nextLevel: NextLevel) {
-//
-//    }
-//
-//    func nextLevelDevicePositionDidChange(_ nextLevel: NextLevel) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didChangeDeviceOrientation deviceOrientation: NextLevelDeviceOrientation) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didChangeDeviceFormat deviceFormat: AVCaptureDevice.Format) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didChangeCleanAperture cleanAperture: CGRect) {
-//
-//    }
-//
-//    func nextLevelWillStartFocus(_ nextLevel: NextLevel) {
-//
-//    }
-//
-//    func nextLevelDidStopFocus(_ nextLevel: NextLevel) {
-//
-//    }
-//
-//    func nextLevelWillChangeExposure(_ nextLevel: NextLevel) {
-//
-//    }
-//
-//    func nextLevelDidChangeExposure(_ nextLevel: NextLevel) {
-//
-//    }
-//
-//    func nextLevelWillChangeWhiteBalance(_ nextLevel: NextLevel) {
-//
-//    }
-//
-//    func nextLevelDidChangeWhiteBalance(_ nextLevel: NextLevel) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, willProcessRawVideoSampleBuffer sampleBuffer: CMSampleBuffer, onQueue queue: DispatchQueue) {
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, renderToCustomContextWithImageBuffer imageBuffer: CVPixelBuffer, onQueue queue: DispatchQueue) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, willProcessFrame frame: AnyObject, pixelBuffer: CVPixelBuffer, timestamp: TimeInterval, onQueue queue: DispatchQueue) {
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didSetupVideoInSession session: NextLevelSession) {
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didSetupAudioInSession session: NextLevelSession) {
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didStartClipInSession session: NextLevelSession) {
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didCompleteClip clip: NextLevelClip, inSession session: NextLevelSession) {
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didAppendVideoSampleBuffer sampleBuffer: CMSampleBuffer, inSession session: NextLevelSession) {
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didSkipVideoSampleBuffer sampleBuffer: CMSampleBuffer, inSession session: NextLevelSession) {
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didAppendVideoPixelBuffer pixelBuffer: CVPixelBuffer, timestamp: TimeInterval, inSession session: NextLevelSession) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didSkipVideoPixelBuffer pixelBuffer: CVPixelBuffer, timestamp: TimeInterval, inSession session: NextLevelSession) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didAppendAudioSampleBuffer sampleBuffer: CMSampleBuffer, inSession session: NextLevelSession) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didSkipAudioSampleBuffer sampleBuffer: CMSampleBuffer, inSession session: NextLevelSession) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didCompleteSession session: NextLevelSession) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didCompletePhotoCaptureFromVideoFrame photoDict: [String : Any]?) {
-//
-//    }
-//
-//
-//}
-//
-//extension ViewCaptureViewController : NextLevelPhotoDelegate {
-//    func nextLevel(_ nextLevel: NextLevel, willCapturePhotoWithConfiguration photoConfiguration: NextLevelPhotoConfiguration) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didCapturePhotoWithConfiguration photoConfiguration: NextLevelPhotoConfiguration) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didProcessPhotoCaptureWith photoDict: [String : Any]?, photoConfiguration: NextLevelPhotoConfiguration) {
-//
-//    }
-//
-//    func nextLevel(_ nextLevel: NextLevel, didProcessRawPhotoCaptureWith photoDict: [String : Any]?, photoConfiguration: NextLevelPhotoConfiguration) {
-//
-//    }
-//
-//    func nextLevelDidCompletePhotoCapture(_ nextLevel: NextLevel) {
-//
-//    }
-//
-//
-//    @available(iOS 11.0, *)
-//    func nextLevel(_ nextLevel: NextLevel, didFinishProcessingPhoto photo: AVCapturePhoto) {
-//
-//    }
-//
-//
-//}
-
 

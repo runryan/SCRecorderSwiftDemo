@@ -11,6 +11,8 @@
 		38CAAB80A34790F167CF2625 /* Pods_TouchToRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA8EFCF2C978853D99F1134 /* Pods_TouchToRecord.framework */; };
 		9421577021F8AC5E00EFADF3 /* TouchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9421576F21F8AC5E00EFADF3 /* TouchableView.swift */; };
 		9421577621F8B56C00EFADF3 /* SCRecordSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9421577521F8B56C00EFADF3 /* SCRecordSessionManager.m */; };
+		943C89C721F959A100537EB9 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C89C621F959A100537EB9 /* AuthenticationHelper.swift */; };
+		943C89D321F9CB1200537EB9 /* AuthorizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C89D221F9CB1200537EB9 /* AuthorizationHelper.swift */; };
 		943E04A021F890C90043997F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E049F21F890C90043997F /* AppDelegate.swift */; };
 		943E04A221F890C90043997F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E04A121F890C90043997F /* ViewController.swift */; };
 		943E04A521F890C90043997F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943E04A321F890C90043997F /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		9421577321F8B56B00EFADF3 /* TouchToRecord-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchToRecord-Bridging-Header.h"; sourceTree = "<group>"; };
 		9421577421F8B56C00EFADF3 /* SCRecordSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecordSessionManager.h; sourceTree = "<group>"; };
 		9421577521F8B56C00EFADF3 /* SCRecordSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecordSessionManager.m; sourceTree = "<group>"; };
+		943C89C621F959A100537EB9 /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
+		943C89D221F9CB1200537EB9 /* AuthorizationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationHelper.swift; sourceTree = "<group>"; };
 		943E049C21F890C90043997F /* TouchToRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchToRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		943E049F21F890C90043997F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		943E04A121F890C90043997F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				9421577221F8B56000EFADF3 /* Utils */,
+				943C89D221F9CB1200537EB9 /* AuthorizationHelper.swift */,
 			);
 			path = SCRecorder;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				943E04CD21F892410043997F /* ViewCaptureViewController.swift */,
 				943E04CE21F892410043997F /* ViewCaptureViewController.xib */,
 				9421576F21F8AC5E00EFADF3 /* TouchableView.swift */,
+				943C89C621F959A100537EB9 /* AuthenticationHelper.swift */,
 			);
 			path = TouchToRecord;
 			sourceTree = "<group>";
@@ -384,7 +390,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TouchToRecord/Pods-TouchToRecord-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CircleProgressView/CircleProgressView.framework",
-				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
 				"${BUILT_PRODUCTS_DIR}/SCRecorder/SCRecorder.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
@@ -393,7 +398,6 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCRecorder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
@@ -432,9 +436,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9421577021F8AC5E00EFADF3 /* TouchableView.swift in Sources */,
+				943C89D321F9CB1200537EB9 /* AuthorizationHelper.swift in Sources */,
 				943E04A221F890C90043997F /* ViewController.swift in Sources */,
 				9421577621F8B56C00EFADF3 /* SCRecordSessionManager.m in Sources */,
 				943E04A021F890C90043997F /* AppDelegate.swift in Sources */,
+				943C89C721F959A100537EB9 /* AuthenticationHelper.swift in Sources */,
 				943E04CF21F892410043997F /* ViewCaptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,14 +619,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8ZM2Q82VPU;
+				DEVELOPMENT_TEAM = A526A259YH;
 				INFOPLIST_FILE = TouchToRecord/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bechoed.TouchToRecord;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bechoed.TouchToRecord1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TouchToRecord/SCRecorder/Utils/TouchToRecord-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -636,14 +642,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8ZM2Q82VPU;
+				DEVELOPMENT_TEAM = A526A259YH;
 				INFOPLIST_FILE = TouchToRecord/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bechoed.TouchToRecord;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bechoed.TouchToRecord1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TouchToRecord/SCRecorder/Utils/TouchToRecord-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

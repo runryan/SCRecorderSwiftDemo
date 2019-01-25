@@ -1,28 +1,24 @@
 PODS:
   - CircleProgressView (1.2.0)
-  - NextLevel (0.13.2)
   - SCRecorder (2.7.0)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - CircleProgressView
-  - NextLevel
   - SCRecorder
   - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CircleProgressView
-    - NextLevel
     - SCRecorder
     - SnapKit
 
 SPEC CHECKSUMS:
   CircleProgressView: 6b5b091d59dc5e5d2fda84e637a40498cdc39937
-  NextLevel: 6947df5dcae803489efc4071b781db753e442d17
   SCRecorder: bbb521dbc222908876ec9cd9156bbc8a893bed44
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: bdf6150280846445e4a45ccb74b78aa342b3e514
+PODFILE CHECKSUM: 20505da8dc19fef9bb0cada95d8e549618cd2c27
 
 COCOAPODS: 1.5.3

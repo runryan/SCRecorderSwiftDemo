@@ -4,7 +4,7 @@ target 'TouchToRecord' do
   use_frameworks!
 
   # Pods for TouchToRecord
-    pod 'NextLevel'
+#    pod 'NextLevel'
     pod 'SnapKit'
     pod 'SCRecorder'
     pod 'CircleProgressView'
